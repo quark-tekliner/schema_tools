@@ -12,6 +12,7 @@ if len(sys.argv) > 1 and sys.argv[1] == 'dockerfile':
     generate_docker_file(name, pathlib.Path(__file__).parent.resolve())
     exit(0)
 
-out_dir = generate(name, pathlib.Path(__file__).parent.resolve(), enums, classes, deps, Settings())
+settings = Settings()
+out_dir = generate(name, pathlib.Path(__file__).parent.resolve(), enums, classes, deps, settings)
 if out_dir is not None:
-    subprocess.run(f'./bin/python -m black {out_dir}'.split(' '))
+    subprocess.run(settings.black.format(out_dir=out_dir).split(' '))
