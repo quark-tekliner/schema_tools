@@ -12,10 +12,11 @@ from schema_tools.decorators import _format_doc_string
 
 def _create_dir_structure(path, settings):
     replay_dir = './.gen-replay'
-    ret = cookiecutter(str(pathlib.Path(path, settings.layout_name)),
+    layout_dir = 'layout'
+    ret = cookiecutter(str(pathlib.Path(path, layout_dir)),
                         # no_input=True,
                         overwrite_if_exists=True,
-                        replay=pathlib.Path(replay_dir, f'{settings.layout_name}.json').exists(),
+                        replay=pathlib.Path(replay_dir, f'{layout_dir}.json').exists(),
                         default_config=dict(replay_dir=replay_dir),
                         output_dir=settings.out_dir)
     return pathlib.Path(ret)

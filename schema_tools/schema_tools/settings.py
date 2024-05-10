@@ -5,7 +5,6 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(yaml_file='config.yml')
 
     out_dir: str
-    layout_name: str = 'layout'
     classes_file_name: str
     enums_file_name: str
 
