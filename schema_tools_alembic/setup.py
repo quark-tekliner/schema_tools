@@ -7,7 +7,7 @@ setup(
     package_data={'': ['layout/**', 'templates/**', 'Dockerfile']},
     include_package_data=True,
     install_requires=[
-        'schema_tools @ file:///home/quark/dev/skeleton_w_schema/schema_tools',
+        'schema_tools @ git+https://github.com/quark-tekliner/schema_tools/schema_tools',
         'black==24.4.0',
     ]
 )
