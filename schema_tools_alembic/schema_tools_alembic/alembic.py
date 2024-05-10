@@ -71,7 +71,7 @@ class T(TypeDefinition):
 class F(FieldDefinition):
     primary_key: bool = None
     index: bool = None
-    default: str = None
+    default: str | list[str] = None
     fk: str = None
 
     @property
