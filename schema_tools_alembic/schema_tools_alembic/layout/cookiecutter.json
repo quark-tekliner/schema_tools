@@ -1,0 +1,8 @@
+{
+  "project_name": "migrations",
+  "_copy_without_render": [
+    "*.py",
+    "*.ini",
+    "*.mako"
+  ]
+}

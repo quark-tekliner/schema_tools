@@ -1,0 +1,9 @@
+{% if class_decorator.location %}
+class {{class.__name__}}(Base):
+  {{class_decorator.table_repr}}
+  __table_args__ = ({% if class_decorator.unique_repr_as_list %}{{class_decorator.unique_repr_as_list | join(', ')}}, {% endif %}dict({{class_decorator.kw_args_repr_as_list | join(', ')}}), )
+
+{% for field in fields %}
+  {{field}}
+{%- endfor %}
+{% endif %}

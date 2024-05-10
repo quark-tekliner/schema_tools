@@ -1,0 +1,13 @@
+from sqlalchemy.ext.declarative import declarative_base
+{% for i in deps.python_imports -%}
+{{ i }}
+{% endfor %}
+
+
+Base = declarative_base()
+
+
+{% for c in classes %}
+{{ c }}
+
+{% endfor %}

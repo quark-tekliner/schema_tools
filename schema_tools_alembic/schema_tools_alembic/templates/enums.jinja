@@ -1,0 +1,8 @@
+from enum import Enum
+
+{% for e in enums %}
+class {{e.__name__}}(str, Enum):
+  {% for f in e -%}
+  {{ f.name }} = '{{ f.value }}'
+  {% endfor %}
+{% endfor %}
